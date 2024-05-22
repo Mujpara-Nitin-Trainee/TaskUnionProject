@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/output.css">
+</head>
+<body>
+  <header class="flex justify-between items-center my-2 mx-8">
+    <div class="">
+     ProjectUnion
+    </div>
+    <div>
+      <button class="border-2 px-[5px] py-[1px]" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <div class="flex flex-wrap  gap-6 w-[90%] mx-auto my-10 ">
+
+      <div class="w-[calc(90%/3)] rounded overflow-hidden shadow-lg hover:opacity-[0.6]" onclick="changePage('dynamicTable')">
+        <div class="border-2 " style="height: 210px;">
+          <img class="w-full" src="/assets/dynamicTable.png" alt="Sunset in the mountains">
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Dynamic Table using Javascript</div>
+          <p class="text-gray-700 text-base">
+            We can dynamically change rows and columns using + and - buttons.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Game</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#javascript</span>
+        </div>
+      </div>
+
+      <div class="w-[calc(90%/3)] rounded overflow-hidden shadow-lg hover:opacity-[0.6]" onclick="changePage('kukukube')">
+        <div class="border-2" style="height: 210px;">
+          <img class="w-full h-full" src="/assets/kukuKube.png" alt="Sunset in the mountains">
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">kuku kube using javascript</div>
+          <p class="text-gray-700 text-base">
+            By Playing kuku kube You can get an idea on how well you see with this simple game that will let you test your vision in a fun way.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Game</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#javascript</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kukukube</span>
+        </div>
+      </div>
+
+      <div class="w-[calc(90%/3)] rounded overflow-hidden shadow-lg hover:opacity-[0.6]" onclick="changePage('ticTacToe')">
+        <div class="w-full" style="height: 210px;">
+          <img class="w-full h-full" src="/assets/tic-tac-toe.png" alt="Sunset in the mountains">
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Tic tac toe</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Game</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#javascript</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tictactoe</span>
+        </div>
+      </div>
+      
+      <div class="w-[calc(90%/3)] rounded overflow-hidden shadow-lg hover:opacity-[0.6]" onclick="changePage('paginate/orderBy')">
+        <div class="w-full" style="height: 210px;">
+          <img class="w-full h-full" src="/assets/paging.png" alt="Sunset in the mountains">
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Pagination With Order By</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ExpressJs</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Mysql</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Pagination</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sorting</span>
+        </div>
+      </div>
+
+      <div class="w-[calc(90%/3)] rounded overflow-hidden shadow-lg hover:opacity-[0.6]" onclick="changePage('paginate/delimiter')">
+        <div class="w-full" style="height: 210px;">
+          <img class="w-full h-full" src="/assets/delimiterSearch.png" alt="Sunset in the mountains">
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Pagination With Order By</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ExpressJs</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Mysql</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#searching</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#delimiterSearching</span>
+        </div>
+      </div>
+
+      <div class="w-[calc(90%/3)] rounded overflow-hidden shadow-lg hover:opacity-[0.6]" onclick="changePage('jobIndex')">
+        <div class="w-full" style="height: 210px;">
+          <img class="w-full h-full" src="/assets/jobForm.png" alt="Sunset in the mountains">
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Job Application Form</div>
+          <p class="text-gray-700 text-base">
+            This Job Application Form has more than 90 Input Fields.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#ExpressJs</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Mysql</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#AJAX</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#JobForm</span>
+        </div>
+      </div>
+
+  </div>
+
+  <script>
+    const changePage = async(page) => {
+      window.location.href = `/student/${page}`;
+    }
+
+    const logout = async() => {
+      window.location.href =  '/student/logout';   
+    }
+
+  </script>
+
+</body>
+</html>

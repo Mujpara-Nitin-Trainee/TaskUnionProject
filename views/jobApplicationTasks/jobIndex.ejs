@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form</title>
+  <link rel="stylesheet" href="/css/output.css">
+
+</head>
+<body>
+  <p id="page" class="hidden">1</p>
+
+  <div class="flex w-11/12 justify-center my-10">
+    <div class="w-40 h-20 bg-orange-500 border-2 border-l-4 border-black flex justify-center items-center" id="basicDetailsIndication">
+      Basic Details
+    </div>
+    <div class="w-40 h-20 bg-orange-300 border-2 border-black flex justify-center items-center" id="educationalDetailsIndication">
+      Education Details
+    </div>
+    <div class="w-40 h-20 bg-orange-300 border-2 border-black flex justify-center items-center" id="langDetailsIndication">
+      Language Details
+    </div>
+    <div class="w-40 h-20 bg-orange-300 border-2 border-black flex justify-center items-center" id="techDetailsIndication">
+      Technology Details
+    </div>
+    <div class="w-40 h-20 bg-orange-300 border-2 border-black flex justify-center items-center" id="workDetailsIndication">
+      Work Details
+    </div>
+    <div class="w-40 h-20 bg-orange-300 border-2 border-black flex justify-center items-center" id="referDetailsIndication">
+      reference Details
+    </div>
+    <div class="w-40 h-20 bg-orange-300 border-2 border-r-4 border-black flex justify-center items-center z-10" id="preferenceDetailsIndication">
+      preference Details
+    </div>
+    <div class="w-[57px] h-14 bg-orange-300 border-[3px] border-black rotate-45 mt-[12px] z-0 ml-[-29px]">
+    </div>
+  </div>
+
+  <span id="page-error" class="w-full flex justify-center"></span>
+
+  <div class="w-11/12 mx-20">
+    
+    <%- include('./basicDetails') %>
+    <%- include('./educationDetails') %>
+    <%- include('./languageDetails') %>
+    <%- include('./techDetails') %>
+    <%- include('./workDetails') %>
+    <%- include('./referenceDetails') %>
+    <%- include('./preferenceDetails') %>
+
+  </div>
+
+    <div class="w-11/12 flex justify-center">
+      <div>
+        <input type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onclick="changePage(-1)" value="pre"> 
+        <input type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" onclick="changePage(1)" value="next">
+      </div>
+    </div>
+
+  <script>
+
+    let pages = ['basicDetails','educationalDetails','langDetails','techDetails','workDetails','referDetails','preferenceDetails'];
+
+    const changePage = async(page) => {
+
+      let currentPage = Number(document.getElementById('page').innerHTML);
+
+      let nextPage = currentPage + page;
+
+      let isValid = await validateBasicDetails();
+
+      if(isValid === false){
+        document.getElementById('page-error').innerHTML = "Plz Fill All Require Fields";
+        return 0;
+      }
+
+      if(nextPage < 1 || nextPage > 7){
+        return 0;
+      }
+
+      pages.forEach((e,index) => {
+        if(index+1 === nextPage){
+          let visibleDiv = document.getElementById(pages[index]);
+          visibleDiv.style.display = "block";
+
+          let indication = pages[index].concat('Indication');
+
+          let indicationDiv = document.getElementById(indication);
+          indicationDiv.style.background = "#f97316";
+
+          document.getElementById('page').innerHTML = nextPage;
+        }else{
+          let visibleDiv = document.getElementById(pages[index]);
+          visibleDiv.style.display = "none";
+
+          let indication = pages[index].concat('Indication');
+
+          let indicationDiv = document.getElementById(indication);
+          indicationDiv.style.background = "#fdba74";
+
+        }
+      })
+    }
+
+    const validateBasicDetails = async () => {
+      let fields = ['firstName','lastName','email','mobileNo','dob','address','state','city','pincode','relationStatus'];
+
+      let ans = await validateInput('mobileNo');
+      console.log(ans);
+      return ans;
+    }
+
+  </script>
+  <script src="/scripts/validatation.js"></script>
+
+</body>
+
+</html>

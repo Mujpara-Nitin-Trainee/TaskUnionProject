@@ -1,0 +1,115 @@
+<div class="page w-full mx-auto my-10" id="basicDetails">
+
+  <div class="w-11/12 mx-auto">
+    <h3 class="underline font-semibold text-2xl">Basic Details</h3>
+    <div class="w-[70%] flex justify-between my-3">
+      <div class="w-2/5 flex justify-between">
+        <label>firstName</label>
+        <div>
+          <input type="text" name="firstName" class="border-2" placeholder="Enter First Name" id="firstName" oninput="validateInput('firstName')" /><br>
+          <span id="firstName-error"></span>
+        </div>
+      </div>
+      <div class="w-2/5 flex justify-between">
+        <label>lastName</label>
+        <div>
+          <input type="text" name="lastName" class="border-2" placeholder="Enter Last Name" id="lastName" oninput="validateInput('lastName')" /><br>
+          <span id="lastName-error"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[70%] flex justify-between my-3">
+      <div class="w-2/5 flex justify-between">
+        <label>Email</label>
+        <div>
+          <input type="text" name="email" class="border-2" placeholder="Enter email" id="email" oninput="validateInput('email')" /><br>
+          <span id="email-error"></span>
+        </div>
+      </div>
+      <div class="w-2/5 flex justify-between">
+        <label>MobileNo</label>
+        <div>
+          <input type="text" name="mobileNo" class="border-2" placeholder="Enter Mobile No" id="mobileNo" oninput="validateInput('mobileNo')" /><br>
+          <span id="mobileNo-error"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[70%] flex justify-between my-3">
+      <div class="w-2/5 flex justify-start">
+        <label>Gender</label>
+        <div class="ml-[90px] flex justify-between gap-2">
+          <label>Male</label><input type="radio" name="gender" value="male" />
+          <label>Female</label><input type="radio" name="gender" value="female"><br>
+          <span id="gender-error"></span>
+        </div>
+      </div>
+      <div class="w-2/5 flex justify-between">
+        <label>DOB</label>
+        <div>
+          <input type="text" class="border-2" name="dob" class="border-2" placeholder="Enter DOB in YYYY/MM/DD" id="dob" oninput="validateInput('dob')" /><br>
+          <span id="dob-error"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[70%] flex justify-between my-3">
+      <div class="w-2/5 flex justify-between">
+        <label>Address</label>
+        <div>
+          <textarea class="border-2" id="address" oninput="validateInput('address')"></textarea><br>
+          <span id="address-error"></span>
+        </div>
+      </div>
+      <div class="w-2/5 flex justify-between">
+        <label>State</label>
+        <div>
+          <select class="w-[218px] h-6" id="state" name="state" oninput="validateInput('state')">
+            <option value="">Select Any Value</option>
+            <option value="gujarat">Gujarat</option>
+            <option value="maharastra">Maharastra</option>
+          </select><br>
+          <span id="state-error"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[70%] flex justify-between my-3">
+      <div class="w-2/5 flex justify-between">
+        <label>City</label>
+        <div>
+          <select class="w-[218px] h-6" id="city" name="city" oninput="validateInput('city')">
+            <option value="">Select Any city</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Gandhinagar">Gandhinagar</option>
+          </select><br>
+          <span id="city-error"></span>
+        </div>
+      </div>
+      <div class="w-2/5 flex justify-between">
+        <label>pincode</label>
+        <div>
+          <input type="text" class="border-2" name="pincode" class="border-2" placeholder="Enter pincode" id="pincode" oninput="validateInput('pincode')"/><br>
+          <span id="pincode-error"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[70%] flex justify-between my-3">
+      <div class="w-2/5 flex justify-between">
+        <label>RelationShip Status</label>
+        <div>
+          <select class="w-[218px] h-6" id="relationStatus" name="relationStatus" oninput="validateInput('relationStatus')">
+            <option value="">Select Your Status</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+          </select><br>
+          <span id="relationStatus-error"></span>
+        </div>
+      </div>
+      <div class="w-2/5 flex justify-between">
+      </div>
+    </div>
+  </div>
+</div>

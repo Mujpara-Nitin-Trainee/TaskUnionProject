@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="h-screen  bg-emerald-100">
+
+  <div class="h-full flex justify-center items-center">
+
+    <div class="p-4 border-2 border-black bg-stone-300 rounded-md w-2/6">
+    
+      <h3 class="text-center font-extrabold my-10">Student Registration Page</h3>
+      
+      <form id="registerPage">
+        <div class="flex justify-between my-10">
+          <div>
+            <label>FirstName:- </label>
+          </div>
+          <div class="inline-block w-9/12">
+            <input type="text" name="firstName" class="border-2 border-black w-full" value="" placeholder="Enter firstName" id="firstName" oninput="validateInput('firstName')" required tabindex="1"/><br>
+            <p id="firstName-error"></p>
+          </div>
+        </div>
+
+        <div class="flex  justify-between my-10">
+          <label>LastName:- </label>
+          <div class="inline-block w-9/12">
+            <input type="text" name="lastName" class="border-2 border-black w-full" value="" placeholder="Enter lastName" id="lastName" oninput="validateInput('lastName')" required tabindex="2"/><br>
+            <span id="lastName-error"></span>
+          </div>
+        </div>
+
+        <div class="flex  justify-between my-10">
+          <label>Email:- </label>
+          <div class="inline-block w-9/12">
+            <input type="text" name="email" class="border-2 border-black w-full" value="" placeholder="Enter email" id="email" oninput="validateInput('email')" required tabindex="3"/><br>
+            <span id="email-error"></span>
+          </div>
+        </div>
+
+        <div class="flex  justify-between my-10">
+          <label>dob:- </label>
+          <div class="inline-block w-9/12">
+            <input type="text" name="dob"  class="border-2 border-black w-full" value="" placeholder="YYYY/MM/DD" id="dob" oninput="validateInput('dob')" required tabindex="4"/><br>
+            <span id="dob-error"></span>
+          </div>
+        </div>
+
+        <div class="flex  justify-between my-10">
+          <label>Password:- </label>
+          <div class="inline-block w-9/12">
+            <input type="password" name="password" class="border-2 border-black w-full" value="" placeholder="********" id="password" oninput="validateInput('password')" required tabindex="5"/><br>
+            <span id="password-error"></span>
+          </div>
+        </div>
+
+        <div class="float-end">
+          <input type="button" onclick="registerStudent()" class="border-2 border-black py-[1px] px-[2px] rounded-md bg-teal-600" tabindex="6" value="Register">
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="/scripts/validatation.js"></script>
+  <script src="/scripts/registerStudent.js"></script>
+
+</body>
+</html>

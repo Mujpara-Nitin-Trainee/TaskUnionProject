@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination with OrderBy</title>
+  <link rel="stylesheet" href="/css/output.css">
+</head>
+<body>
+  <h3 class="text-center my-6 font-semibold text-3xl">Nitin Mujpara 10/3/24 24DEV084</h3>
+  <p id="order" class="hidden"></p>
+  <p id="column" class="hidden"></p>
+  <div class="w-10/12 mx-auto">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          
+          <th scope="col" class="px-6 py-3">
+            <div class="flex items-center">
+              <span>Sr.No</span>
+              <div class="mx-2">
+                <span id="id-up" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path></svg>
+                </span>
+                
+                <span id="id-down" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                </span>
+              </div>
+            </div>
+          </th>
+          
+          <th scope="col" class="px-6 py-3" onclick="changeOrder('surname')">
+            <div class="flex items-center">
+              <span>surname</span>
+              <div class="mx-2">
+                <span id="surname-up" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path></svg>
+                </span>
+                
+                <span id="surname-down" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                </span>
+              </div>
+            </div>
+          </th>
+          
+          <th scope="col" class="px-6 py-3" onclick="changeOrder('name')">
+            <div class="flex items-center">
+              <span>name</span>
+              <div class="mx-2">
+                <span id="name-up" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path></svg>
+                </span>
+                
+                <span id="name-down" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                </span>
+              </div>
+            </div>
+          </th>
+
+          <th scope="col" class="px-6 py-3" onclick="changeOrder('fatherName')">
+            <div class="flex items-center">
+              <span>fatherName</span>
+              <div class="mx-2">
+                <span id="fatherName-up" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path></svg>
+                </span>
+                
+                <span id="fatherName-down" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                </span>
+              </div>
+            </div>
+          </th>
+
+          <th scope="col" class="px-6 py-3" onclick="changeOrder('email')">
+            <div class="flex items-center">
+              <span>email</span>
+              <div class="mx-2">
+                <span id="email-up" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path></svg>
+                </span>
+                
+                <span id="email-down" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                </span>
+              </div>
+            </div>
+          </th>
+
+          <th scope="col" class="px-6 py-3" onclick="changeOrder('mobileNo')">
+            <div class="flex items-center">
+              <span>mobileNo</span>
+              <div class="mx-2">
+                <span id="mobileNo-up" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path></svg>
+                </span>
+                
+                <span id="mobileNo-down" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                </span>
+              </div>
+            </div>
+          </th>
+
+          <th scope="col" class="px-6 py-3" onclick="changeOrder('collegeName')">
+            <div class="flex items-center">
+              <span>College name</span>
+              <div class="mx-2">
+                <span id="collegeName-up" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M3 19h18a1.002 1.002 0 0 0 .823-1.569l-9-13c-.373-.539-1.271-.539-1.645 0l-9 13A.999.999 0 0 0 3 19z"></path></svg>
+                </span>
+                
+                <span id="collegeName-down" class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" style="fill: rgb(216, 213, 213);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                </span>
+              </div>
+            </div>
+          </th>
+
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="flex justify-center items-center my-5">
+    <button class="mx-4 text-white bg-blue-300 hover:bg-blue-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-800" onclick="extreamLeft()"> << </button>
+    <button class="mx-4 text-white bg-blue-300 hover:bg-blue-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-800" onclick="changePage(-1)"> < </button>
+    <p id="page" class="mr-3 ml-5"> 1 </p>
+    <button class="mx-4 text-white bg-blue-300 hover:bg-blue-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-800" onclick="changePage(1)"> > </button>
+    <button class="mx-4 text-white bg-blue-300 hover:bg-blue-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-800" onclick="extreamRight()"> >> </button>
+  </div>
+
+  <div class="flex justify-center my-3 underline"><a href="/student/">Click Here To Redirect Home Page</a></div> 
+
+  <script>
+
+    let page = document.getElementById('page');
+
+    const extreamLeft = async () => {
+      
+      let column = document.getElementById('column').innerHTML;
+      let order = document.getElementById('order').innerHTML;
+
+      fetchdata(1,column,order);
+      page.innerHTML = 1;
+    }
+
+    const extreamRight = async() => {
+      let column = document.getElementById('column').innerHTML;
+      let order = document.getElementById('order').innerHTML;
+      
+      fetchdata(5,column,order);
+      
+      page.innerHTML = 5;
+    }
+
+    const changePage = async(move) => {
+      let count = Number(document.getElementById('page').innerHTML);
+
+      let column = document.getElementById('column').innerHTML;
+      let order = document.getElementById('order').innerHTML;
+
+        if((move > 0 && count != 5) || (move < 0 && count != 1)){
+          fetchdata(count+move,column,order);
+          page.innerHTML = count+move;
+        }
+    }
+
+    const changeOrder = async (column) => {
+
+        let currentColumn = document.getElementById('column').innerHTML;
+        let currentOrder = document.getElementById('order').innerHTML;
+
+        if(currentColumn === column){
+          if(currentOrder === "asc"){
+            fetchdata(1,column,"desc");
+          }else{
+            
+            fetchdata(1,column,"asc");
+          }
+        }else{
+          fetchdata(1,column,"asc");
+        }
+
+        page.innerHTML = 1;
+    }
+
+    const indicateOrder = async (column,order) => {
+
+      let arrows = document.querySelectorAll(".arrow");
+
+      arrows.forEach((a) => {
+        a.style.display = "block";
+      })
+
+      let id;
+      
+      if(order === "asc"){
+        id = column.concat('-up')
+      }else{
+        id = column.concat('-down')
+      }
+      
+      let span = document.getElementById(id);
+      span.style.display = "none";
+    }
+
+    const fetchdata = async (id,col,od) => {
+      let page = id || Number(document.getElementById('page').innerHTML) || 1;
+      let column = col || "id";
+      let order = od || "asc";
+
+      let data = await fetch(`/student/orderBy/${page}/${column}/${order}`, {
+        method:"GET",
+        headers:{
+          "Content-Type":"application/json"
+        }
+      })
+
+      let res = await data.json();
+
+      let studentData = res.students;
+
+      document.getElementById('order').innerHTML = res.order;
+      document.getElementById('column').innerHTML = res.col;
+
+      let tbody = document.getElementById('tbody');
+      tbody.innerHTML = "";
+
+      indicateOrder(res.col,res.order);
+
+      studentData.map((item) => {
+        let tr = document.createElement('tr');
+        tr.classList.add('odd:bg-white','odd:dark:bg-gray-900','even:bg-gray-50','even:dark:bg-gray-800','border-b','dark:border-gray-700')
+        Object.values(item).map((val) => {
+          let td = document.createElement('td');
+          td.textContent = val;
+          td.classList.add('px-6','py-3');
+          tr.appendChild(td);
+        })
+        tbody.appendChild(tr);
+      })
+
+    }
+
+    fetchdata();
+
+  </script>
+
+</body>
+</html>
